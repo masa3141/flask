@@ -80,6 +80,7 @@ class StartThread(threading.Thread):
 
 mfapp = MfApp()
 
+
 @app.route('/')
 def hello_world():
     li = [
@@ -171,8 +172,6 @@ def show_item(id):
     response['name'] = mfapp.itemid2name[id]
     response['latent_factor'] = mfapp.mf.q[itemindex, :].tolist()
     return jsonify(response)
-
-
 
 
 if __name__ == '__main__':
